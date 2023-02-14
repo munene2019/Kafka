@@ -1,0 +1,22 @@
+Here are the steps to configure Apache Kafka on a Windows machine:
+
+Download the latest version of Kafka from the Apache Kafka website (https://kafka.apache.org/downloads).
+
+Extract the downloaded file to a directory on your machine.
+
+Open a Command Prompt and navigate to the Kafka directory.
+
+Start the ZooKeeper server by running the following command: bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+
+Start the Kafka server by running the following command: bin\windows\kafka-server-start.bat config\server.properties
+
+Create a topic by running the following command: bin\windows\kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic <topic-name>
+
+You can check if topic is created by running the following command: bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092
+
+You can start a Kafka Consumer by running the following command: bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic <topic-name> --from-beginning
+
+You can start a Kafka Producer by running the following command: bin\windows\kafka-console-producer.bat --bootstrap-server localhost:9092 --topic <topic-name>
+
+You should now have a basic Kafka setup running on your Windows machine, and you can start sending and receiving messages through the created topic.
+It is important to note that these commands are basic examples, and you may need to add additional configurations and logic to your Kafka depending on your specific use case.
